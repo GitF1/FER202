@@ -1,6 +1,7 @@
 // src/CollaborativeArticles.js
-import React from 'react';
-import styled from 'styled-components';
+import React, { useContext, useEffect } from "react";
+import styled from "styled-components";
+import { Context } from "../../../context/ContainerContext";
 
 const Container = styled.div`
   display: flex;
@@ -43,26 +44,39 @@ const Tag = styled.button`
 `;
 
 const CollaborativeArticles = () => {
-    const tags = [
-        'Marketing', 'Public Administration', 'Healthcare', 'Engineering',
-        'IT Services', 'Sustainability', 'Business Administration',
-        'Telecommunications', 'HR Management'
-    ];
+  const tags = [
+    "Marketing",
+    "Public Administration",
+    "Healthcare",
+    "Engineering",
+    "IT Services",
+    "Sustainability",
+    "Business Administration",
+    "Telecommunications",
+    "HR Management",
+  ];
+  const { value, setValue } = useContext(Context);
 
-    return (
-        <Container>
-            <Heading>Explore collaborative articles</Heading>
-            <SubHeading>
-                We’re unlocking community knowledge in a new way. Experts add insights directly into each article, started with the help of AI.
-            </SubHeading>
-            <TagsContainer>
-                {tags.map((tag, index) => (
-                    <Tag key={index}>{tag}</Tag>
-                ))}
-                <Tag>Show all</Tag>
-            </TagsContainer>
-        </Container>
-    );
+  useEffect(() => {
+    setValue("New Value");
+  }, [value]);
+
+  return (
+    <Container>
+      {value}
+      <Heading>Explore collaborative articles</Heading>
+      <SubHeading>
+        We’re unlocking community knowledge in a new way. Experts add insights
+        directly into each article, started with the help of AI.
+      </SubHeading>
+      <TagsContainer>
+        {tags.map((tag, index) => (
+          <Tag key={index}>{tag}</Tag>
+        ))}
+        <Tag>Show all</Tag>
+      </TagsContainer>
+    </Container>
+  );
 };
 
 export default CollaborativeArticles;
