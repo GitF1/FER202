@@ -1,8 +1,11 @@
 import React, { Profiler } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/Routes.index";
+import { Provider } from "react-redux";
+import { store } from "./store/app/store";
 
 // Define the onRender callback function
 const onRender = (
@@ -28,7 +31,9 @@ const onRender = (
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Profiler id="App" onRender={onRender}>
-    <App />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </Profiler>
 );
 

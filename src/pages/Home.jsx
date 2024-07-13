@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import Header from '../components/home/Header';
-import Body from '../components/home/Body';
-import Footer from '../components/home/Footer';
+import React, { Fragment } from "react";
+import Header from "../components/home/Header";
+import Body from "../components/home/Body";
+import Footer from "../components/home/Footer";
 
 const Home = () => {
   return (
@@ -14,4 +14,3 @@ const Home = () => {
 };
 
 export default Home;
-

@@ -1,0 +1,49 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "projectName": "Project Alpha U",
+      "description": "This is a project about developing a new AI algorithm.",
+      "type": "Research",
+      "department": "AI Department"
+    },
+    {
+      "id": "2",
+      "projectName": "Beta",
+      "description": "This project focuses on enhancing cybersecurity measures.",
+      "type": "Development",
+      "department": "Security Department"
+    },
+    {
+      "id": "3",
+      "projectName": "Project Gamma",
+      "description": "A project aimed at improving customer service using chatbots.",
+      "type": "Implementation",
+      "department": "Customer Service"
+    },
+    {
+      "id": "4",
+      "projectName": "Project Delta",
+      "description": "This project is about creating a new marketing strategy.",
+      "type": "Marketing",
+      "department": "Marketing Department"
+    },
+    {
+      "id": "5",
+      "projectName": "Project Epsilon",
+      "description": "A project to upgrade the current IT infrastructure.",
+      "type": "Infrastructure",
+      "department": "IT Department"
+    }
+  ],
+  "departments": [
+    {
+      "id": "1",
+      "title": "Dev"
+    },
+    {
+      "id": "2",
+      "title": "Depart Call"
+    }
+  ]
+}

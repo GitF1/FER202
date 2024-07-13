@@ -1,19 +1,45 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import styled from "styled-components";
-import InfoSection from "./body/InfoSection";
-import Connect from "./body/Connect";
-import Slider from "./body/Slider";
-import CollaborativeArticles from "./body/CollaborativeArticles";
-import Form from "../hook/Reducer";
+import { useInView } from "react-intersection-observer";
+const InfoSection = lazy(() => import("./body/InfoSection"));
+const Connect = lazy(() => import("./body/Connect"));
+const Slider = lazy(() => import("./body/Slider"));
+
+const CollaborativeArticles = lazy(() =>
+  import("./body/CollaborativeArticles")
+);
+
+const Form = lazy(() => import("../hook/Reducer"));
+
+const LazyLoadComponent = ({ children }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  return <div ref={ref}>{inView ? children : null}</div>;
+};
 
 const Body = () => {
   return (
     <Container>
-      <Form />
-      <Slider />
-      <CollaborativeArticles />
-      <InfoSection />
-      <Connect />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyLoadComponent>
+          <Form />
+        </LazyLoadComponent>
+        <LazyLoadComponent>
+          <Slider />
+        </LazyLoadComponent>
+        <LazyLoadComponent>
+          <CollaborativeArticles />
+        </LazyLoadComponent>
+        <LazyLoadComponent>
+          <InfoSection />
+        </LazyLoadComponent>
+        <LazyLoadComponent>
+          <Connect />
+        </LazyLoadComponent>
+      </Suspense>
     </Container>
   );
 };

@@ -1,15 +1,15 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const SectionContainer = styled.section`
   margin-top: 10px;
-    display: flex;
-    background-color: #f5f5f5;
-    padding: 40px;
-    border-radius: 8px;
-    border: 1px solid #d5e0ef;
-    box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  display: flex;
+  background-color: #f5f5f5;
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid #d5e0ef;
+  box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 `;
 
 const TextContent = styled.div`
@@ -46,7 +46,7 @@ const Button = styled.button`
   transition: all 0.2s ease-in-out;
   &:hover {
     background-color: #1f93d1;
-    color:#fff;
+    color: #fff;
     transform: scale(1.02);
   }
 `;
@@ -69,13 +69,16 @@ const ImageContent = styled.div`
   animation: ${scaleAnimation} 8s infinite;
 `;
 
-
 const InfoSection = () => {
+  console.log("Info section rerender");
+
   return (
     <SectionContainer>
       <TextContent>
         <Heading>Who is LinkedIn for?</Heading>
-        <SubHeading>Anyone looking to navigate their professional life.</SubHeading>
+        <SubHeading>
+          Anyone looking to navigate their professional life.
+        </SubHeading>
         <ButtonList>
           <Button>Find a coworker or classmate</Button>
           <Button>Find a new job</Button>

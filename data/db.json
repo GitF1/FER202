@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Juliet Oma",
+      "email": "julie@yahoo.com",
+      "number": "08100000000"
+    },
+    {
+      "id": "2",
+      "name": "James Williams",
+      "email": "jameswilly@gmail.com",
+      "number": "08111111111"
+    },
+    {
+      "name": "Per",
+      "email": "phanminhvinh30102003@gmail.com",
+      "id": "6edd"
+    },
+    {
+      "id": "671e",
+      "name": "Per Steph",
+      "email": "vinhnqde170404@fpt.edu.vn"
+    }
+  ]
+}

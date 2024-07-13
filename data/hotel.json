@@ -1,0 +1,28 @@
+{
+  "hotel": {
+    "id": 1,
+    "name": "Grand Plaza Hotel",
+    "address": "123 Main St, Cityville",
+    "phone": "+1234567890",
+    "email": "info@grandplazahotel.com",
+    "website": "www.grandplazahotel.com",
+    "rating": 4.5,
+    "description": "Grand Plaza Hotel is a luxurious hotel located in the heart of Cityville, offering world-class amenities and services.",
+    "rooms": [
+      {
+        "roomId": 103,
+        "type": "Suite",
+        "pricePerNight": 250,
+        "status": "booked",
+        "description": "A luxurious suite with a separate living area and premium amenities."
+      },
+      {
+        "roomId": 233,
+        "type": "Deluxe",
+        "pricePerNight": 489,
+        "status": "available",
+        "description": "A deluxe room with a stunning view and premium amenities."
+      }
+    ]
+  }
+}

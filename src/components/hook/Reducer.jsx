@@ -1,8 +1,11 @@
 import { useReducer } from "react";
 
+const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+
 const initialState = {
   age: 21,
   name: "Per",
+  color: colors[Math.floor(Math.random() * colors.length)],
 };
 
 function reducer(state, action) {
@@ -18,6 +21,12 @@ function reducer(state, action) {
       return {
         ...state,
         name: action.nextName,
+      };
+    }
+    case "change-color": {
+      return {
+        ...state,
+        color: colors[Math.floor(Math.random() * colors.length)],
       };
     }
   }
@@ -37,14 +46,19 @@ export default function Form() {
       nextName: e.target.value,
     });
   }
-
+  function handleChangeColor() {
+    dispatch({
+      type: "change-color",
+    });
+  }
   return (
     <>
       <input value={state.name} onChange={handleInputChange} />
       <button onClick={handleButtonClick}>Increment age</button>
-      <p>
+      <p style={{ color: `${state.color}` }}>
         Hello, {state.name}. You are {state.age}.
       </p>
+      <button onClick={handleChangeColor}>Change Color</button>
     </>
   );
 }

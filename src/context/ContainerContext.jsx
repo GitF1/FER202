@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const Context = createContext();
+export const ContextTem = createContext();
 
 function ContainerContext({ children }) {
   const [value, setValue] = useState("default value");
@@ -11,7 +11,9 @@ function ContainerContext({ children }) {
   };
 
   return (
-    <Context.Provider value={initValueContext}>{children}</Context.Provider>
+    <ContextTem.Provider value={initValueContext}>
+      {children}
+    </ContextTem.Provider>
   );
 }
 

@@ -1,7 +1,6 @@
 // src/CollaborativeArticles.js
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import { Context } from "../../../context/ContainerContext";
 
 const Container = styled.div`
   display: flex;
@@ -55,15 +54,9 @@ const CollaborativeArticles = () => {
     "Telecommunications",
     "HR Management",
   ];
-  const { value, setValue } = useContext(Context);
-
-  useEffect(() => {
-    setValue("New Value");
-  }, [value]);
 
   return (
     <Container>
-      {value}
       <Heading>Explore collaborative articles</Heading>
       <SubHeading>
         We’re unlocking community knowledge in a new way. Experts add insights
@@ -73,7 +66,6 @@ const CollaborativeArticles = () => {
         {tags.map((tag, index) => (
           <Tag key={index}>{tag}</Tag>
         ))}
-        <Tag>Show all</Tag>
       </TagsContainer>
     </Container>
   );
